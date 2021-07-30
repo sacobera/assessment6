@@ -23,9 +23,10 @@ test('Check that clicking the upper left square adds an X to the square', async 
 
     let upperLeftSquare = await (await driver).findElement(By.id('cell-0'));
     //await driver.sleep(5000)
-    await upperLeftSquare.click();
+    upperLeftSquare.click();
     
     //await driver.sleep(5000)
+    expect(await upperLeftSquare.getText()).toEqual('X');
 
 });
 
@@ -34,20 +35,20 @@ test('Check that clicking the upper right square adds an X to the square.', asyn
 
     let upperRightSquare = await (await driver).findElement(By.id('cell-2'));
     // await driver.sleep(5000)
-    await upperRightSquare.click();
+    upperRightSquare.click();
     
     // await driver.sleep(5000)
     
-    // expect(await upperRightSquare.getText()).toEqual('X')
+    expect(await upperRightSquare.getText()).toEqual('X')
 });
 
 test('Check that clicking the lower right square adds an X to the square.', async () => {
 
     let lowerRightSquare = await (await driver).findElement(By.id('cell-8'));
     // await driver.sleep(5000)
-    await lowerRightSquare.click();
+    lowerRightSquare.click();
     
     // await driver.sleep(5000)
     
-    // expect(await lowerRightSquare.getText()).toEqual('X')
+    expect(await lowerRightSquare.getText()).toEqual('X');
 });
